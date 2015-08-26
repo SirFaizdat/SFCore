@@ -1,0 +1,6 @@
+main: me.sirfaizdat.sfcore.SFCore
+name: ${project.name}
+version: ${project.version}
+description: ${project.description}
+website: ${project.url}
+author: SirFaizdat
