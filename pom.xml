@@ -28,19 +28,13 @@
     <description>The core for all of SirFaizdat's plugins. Developed by SirFaizdat.</description>
     <url>http://sirfaizdat.github.io/SFCore</url>
 
-    <repositories>
-        <repository>
-            <id>spigot-repo</id>
-            <name>Spigot Repository</name>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-        </repository>
-    </repositories>
-
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.8.7-R0.1-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/libs/spigot-1.8.8.jar</systemPath>
         </dependency>
     </dependencies>
 

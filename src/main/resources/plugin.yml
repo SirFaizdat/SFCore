@@ -4,3 +4,6 @@ version: ${project.version}
 description: ${project.description}
 website: ${project.url}
 author: SirFaizdat
+commands:
+  sfcore:
+    description: Commands to manage SFCore.

@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package me.sirfaizdat.sfcore.particles;
+package me.sirfaizdat.sfcore.fx;
 
 import org.bukkit.Bukkit;
 

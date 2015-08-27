@@ -23,4 +23,4 @@
  * @author SirFaizdat
  * @author darkblade12
  */
-package me.sirfaizdat.sfcore.particles;
+package me.sirfaizdat.sfcore.fx;
