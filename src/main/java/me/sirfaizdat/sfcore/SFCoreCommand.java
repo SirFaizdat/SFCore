@@ -38,7 +38,7 @@ public class SFCoreCommand {
 
     @Command(name = "sfcore.config")
     public void showConfigEntries(CommandArgs args) {
-        args.getSender().sendMessage(ChatColor.AQUA + "Entries:");
+        core.getLang().send(args.getSender(), "config-header");
         for (Map.Entry<String, Object> keys : core.getJsonConfig().getEntries().entrySet()) {
             args.getSender().sendMessage(ChatColor.RED + keys.getKey() + " " + ChatColor.GRAY + " = " + ChatColor.RED + keys.getValue());
         }

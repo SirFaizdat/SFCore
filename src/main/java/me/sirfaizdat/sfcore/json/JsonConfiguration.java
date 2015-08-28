@@ -86,6 +86,17 @@ public class JsonConfiguration {
     }
 
     /**
+     * Clears all current entries and loads again.
+     * This will also add any new defaults if they're added.
+     *
+     * @throws IOException If the config couldn't be loaded.
+     */
+    public void reload() throws IOException {
+        this.entries.clear();
+        load();
+    }
+
+    /**
      * Adds a default value to the configuration. If a default value
      * can't be found, it will be added upon load, which is useful for
      * when the plugin updates and there are new variables.

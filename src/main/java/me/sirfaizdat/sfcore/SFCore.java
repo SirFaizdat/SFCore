@@ -29,6 +29,7 @@ import java.io.IOException;
 public class SFCore extends SFPlugin {
 
     // == Variables
+    private static SFCore instance;
 
     // == Overriden methods
 
@@ -42,21 +43,25 @@ public class SFCore extends SFPlugin {
         return ChatColor.translateAlternateColorCodes('&', txt);
     }
 
+    public static SFCore get() {
+        return instance;
+    }
+
     @Override
     public void enable() {
+        instance = this;
+        loadLang();
         loadConfig();
         registerCommands(new SFCoreCommand(this));
         getLogger().info("Enabled.");
     }
 
-    // == Static methods
+    // == Private methods
 
     @Override
     public void disable() {
 
     }
-
-    // == Private methods
 
     private void loadConfig() {
         getJsonConfig().addDefault("version", "1.0-SNAPSHOT");
@@ -68,6 +73,13 @@ public class SFCore extends SFPlugin {
             // TODO Colored logger message
             e.printStackTrace();
         }
+    }
+
+    // == Static methods
+
+    private void loadLang() {
+        getLang().addDefault("config-header", "&bConfiguration Variables&7 -");
+        getLang().load();
     }
 
 }

@@ -37,10 +37,12 @@ public abstract class SFPlugin extends JavaPlugin {
 
     private CommandFramework commandFramework;
     private JsonConfiguration config;
+    private SFLogger logger;
+    private Lang lang;
 
     // == Overriden methods
 
-
+    // Create the data folder
     @Override
     public void onLoad() {
         if (!getDataFolder().exists()) getDataFolder().mkdir();
@@ -48,9 +50,22 @@ public abstract class SFPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        // Init logger and print the enabling message
+        logger = new SFLogger(this);
+        long startTime = System.currentTimeMillis();
+        logger.log(SFLogger.SFLevel.INFO, "&bEnabling " + getDescription().getFullName() + "...");
+
+        // API initialization
+        lang = new Lang(getDataFolder());
         commandFramework = new CommandFramework(this);
         config = new JsonConfiguration(new File(getDataFolder(), "config.json"));
+
+        // Plugin enable
         enable();
+
+        // Print enabled message
+        long elapsedTime = System.currentTimeMillis() - startTime;
+        logger.log(SFLogger.SFLevel.INFO, "&bEnabled in " + elapsedTime + "ms.");
     }
 
     @Override
@@ -86,4 +101,11 @@ public abstract class SFPlugin extends JavaPlugin {
         return config;
     }
 
+    public SFLogger getSFLogger() {
+        return logger;
+    }
+
+    public Lang getLang() {
+        return lang;
+    }
 }
