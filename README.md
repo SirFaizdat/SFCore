@@ -1,6 +1,9 @@
 # SFCore
 The core for all of my (SirFaizdat's) plugins. Provides the core libraries needed by
 each of my plugins, which allows for the code to be written more efficiently.
+
+**This project has been abandoned.** This library is no longer needed due to efforts from other open source projects.
+
 ## Features
 - JSON serialization system that serializes objects to JSON and back.
 - Custom MC2Web communication system
